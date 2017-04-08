@@ -22,9 +22,21 @@ public abstract class Player
 
    /**
     * getMove
-    *    Abstract method to be overwritten by derived classes.  SpaceStates[][] gb 
+    *    Abstract method to be overwritten by derived classes.  SpaceStates[][] gb
     * */
    public abstract int getMove();
+
+   /**
+    * getOpToken
+    *    Returns other gameToken
+    * */
+   public SpaceStates getOpToken()
+   {
+      if( gameToken == SpaceStates.X )
+         return SpaceStates.O;
+      else
+         return SpaceStates.X;
+   }
 
    /**
     * getToken

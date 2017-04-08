@@ -54,6 +54,34 @@ public class TicTacToe
          players[0] = new Human( SpaceStates.O );
          players[1] = new Human( SpaceStates.X );
       }
+      else if( args.length == 1 )
+      {
+         if( args[0].equals( "-c" ) )
+         {
+            players[0] = new Computer( SpaceStates.O );
+            players[1] = new Computer( SpaceStates.X );
+         }
+         else
+            gameEnd = true;
+      }
+      else if( args.length == 2 )
+      {
+         if( args[0].equals( "-c" ) && args[1].equals( "1" ) )
+         {
+            players[0] = new Human( SpaceStates.O );
+            players[1] = new Computer( SpaceStates.X );
+         }
+         else if( args[0].equals( "-c" ) && args[1].equals( "2" ) )
+         {
+            players[0] = new Computer( SpaceStates.O );
+            players[1] = new Human( SpaceStates.X );
+         }
+         else
+            gameEnd = true;
+      }
+      else
+      {
+      }
 
       // initialize gameBoard
       clearGameBoard();
@@ -117,7 +145,8 @@ public class TicTacToe
 
       /*
        * since there are only 8 ways to win with a 3x3 game board,
-       * this area will check for each one.
+       *  this area will check for each one.
+       * short-circuiting is used to reduce calculation time
        * */
       else
       {
@@ -229,6 +258,15 @@ public class TicTacToe
    }  // end clearGameBoard
 
    /**
+    * getGameTurn
+    * @return gameTurn int
+    * */
+   public static int getGameTurn()
+   {
+      return gameTurn;
+   }  // end getGameTurn
+
+   /**
     * getSpaceString
     * This method returns the string equivalent of the state in a space.
     * Used by printGameBoard.
@@ -257,11 +295,11 @@ public class TicTacToe
    private static void printGameBoard()
    {
       System.out.println();
-      System.out.println( getSpaceString( gameState[0][0] ) + "|" + getSpaceString( gameState[0][1] ) + "|" + getSpaceString( gameState[0][2] ) );
-      System.out.println( "-----" );
-      System.out.println( getSpaceString( gameState[1][0] ) + "|" + getSpaceString( gameState[1][1] ) + "|" + getSpaceString( gameState[1][2] ) );
-      System.out.println( "-----" );
-      System.out.println( getSpaceString( gameState[2][0] ) + "|" + getSpaceString( gameState[2][1] ) + "|" + getSpaceString( gameState[2][2] ) );
+      System.out.println( " " + getSpaceString( gameState[0][0] ) + "|" + getSpaceString( gameState[0][1] ) + "|" + getSpaceString( gameState[0][2] ) );
+      System.out.println( " -----" );
+      System.out.println( " " + getSpaceString( gameState[1][0] ) + "|" + getSpaceString( gameState[1][1] ) + "|" + getSpaceString( gameState[1][2] ) );
+      System.out.println( " -----" );
+      System.out.println( " " + getSpaceString( gameState[2][0] ) + "|" + getSpaceString( gameState[2][1] ) + "|" + getSpaceString( gameState[2][2] ) );
       System.out.println();
    }  // end printGameBoard
 

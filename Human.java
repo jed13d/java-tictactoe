@@ -22,9 +22,9 @@ public class Human extends Player
     * returns the valid choice, or continues to question until receives valid
     * choice. SpaceStates[][] gb
     * */
-    @Override
-    public int getMove()
-    {
+   @Override
+   public int getMove()
+   {
       // variables
       int rv = 0;
       Scanner input = new Scanner( System.in );
@@ -41,72 +41,12 @@ public class Human extends Player
          {
             valid = true;
          }
-//          switch( rv )
-//          {
-//             case 1:
-//                if( gb[0][0] == SpaceStates.EMPTY )
-//                {
-//                   valid = true;
-//                }
-//                break;
-//             case 2:
-//                if( gb[0][1] == SpaceStates.EMPTY )
-//                {
-//                   valid = true;
-//                }
-//                break;
-//             case 3:
-//                if( gb[0][2] == SpaceStates.EMPTY )
-//                {
-//                   valid = true;
-//                }
-//                break;
-//             case 4:
-//                if( gb[1][0] == SpaceStates.EMPTY )
-//                {
-//                   valid = true;
-//                }
-//                break;
-//             case 5:
-//                if( gb[1][1] == SpaceStates.EMPTY )
-//                {
-//                   valid = true;
-//                }
-//                break;
-//             case 6:
-//                if( gb[1][2] == SpaceStates.EMPTY )
-//                {
-//                   valid = true;
-//                }
-//                break;
-//             case 7:
-//                if( gb[2][0] == SpaceStates.EMPTY )
-//                {
-//                   valid = true;
-//                }
-//                break;
-//             case 8:
-//                if( gb[2][1] == SpaceStates.EMPTY )
-//                {
-//                   valid = true;
-//                }
-//                break;
-//             case 9:
-//                if( gb[2][2] == SpaceStates.EMPTY )
-//                {
-//                   valid = true;
-//                }
-//                break;
-//             default:
-//                rv = 0;
-//                break;
-//          }  // end switch
 
       }  // end validator loop
 
       // return valid input
       return rv;
 
-    } // end getMove
+   } // end getMove
 
 }  // end class
