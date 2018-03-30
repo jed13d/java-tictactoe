@@ -1,14 +1,13 @@
 # java-tictactoe
 
 Completed:<br/>
-  Text-based tic-tac-toe-game playable with 2 human players.<br/>
-  Added Compuer AI<br/>
-  
-TODO:<br/>
-  Add GUI<br/>
-  <br/>
-  
+  Version 1 is a Text-based tic-tac-toe-game<br/>
+  Version 2 is a GUI version of the game.<br/>
+  - The GUI version is initiated to have 2 AI players playing.
+  - To make a human player, go to settings menu.
+
 ---
+Commands for Version 1:<br/>
 java TicTacToe [-c [1|2]]<br/>
 java TicTacToe      - regular 2 human player game<br/>
 java TicTacToe -c   - regular 2 ai player game<br/>
